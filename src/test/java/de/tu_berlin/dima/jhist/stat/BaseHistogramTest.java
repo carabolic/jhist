@@ -15,6 +15,7 @@
  ******************************************************************************/
 package de.tu_berlin.dima.jhist.stat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.tu_berlin.dima.jhist.stat.Bucket;
@@ -42,6 +43,7 @@ public abstract class BaseHistogramTest<T> extends BaseDistributionTest<T> {
     return histogramUnderTest();
   }
 
+  @Ignore
   @Test
   public void printHistogram() {
     Histogram<T> histogram = histogramUnderTest();
