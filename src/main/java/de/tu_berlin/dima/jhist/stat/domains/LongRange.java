@@ -25,34 +25,20 @@ import de.tu_berlin.dima.jhist.stat.Domain;
  * @author Christoph Brücke (christoph.bruecke@campus.tu-berlin.de)
  *
  */
-public class LongRange extends AbstractDomain<Long> {
-
-  private final long min;
-  private final long max;
+public class LongRange extends AbstractMinMaxDomain<Long> {
 
   public LongRange(long min, long max) {
-    this.max = max;
-    this.min = min;
-  }
-
-  @Override
-  public Long min() {
-    return min;
-  }
-
-  @Override
-  public Long max() {
-    return max;
+    super(min, max);
   }
 
   @Override
   public Long value(long ordinal) {
-    return min + ordinal;
+    return min() + ordinal;
   }
 
   @Override
   public long ordinal(Long value) {
-    return value - min;
+    return value - min();
   }
 
   @Override

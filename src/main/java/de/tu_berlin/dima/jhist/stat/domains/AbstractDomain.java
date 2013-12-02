@@ -21,6 +21,7 @@ import de.tu_berlin.dima.jhist.stat.Domain;
 
 /**
  * Base class used for most domain implementations.
+ * 
  * @author Christoph Brücke (christoph.bruecke@campus.tu-berlin.de)
  *
  * @param <T>

@@ -20,38 +20,25 @@ import de.tu_berlin.dima.jhist.stat.Domain;
 /**
  * This class is a {@link Domain} implementation used to represent integer ranges.
  * An integer range is given by a minimum and maximum integer (inclusive). The
- * cardinality of a integer range is given by <code>max - min + 1</code>. 
+ * cardinality of a integer range is given by <code>max - min + 1</code>.
+ * 
  * @author Christoph Brücke (christoph.bruecke@campus.tu-berlin.de)
  *
  */
-public class IntegerRange extends AbstractDomain<Integer> {
-
-  private final int min;
-  private final int max;
+public class IntegerRange extends AbstractMinMaxDomain<Integer> {
 
   public IntegerRange(final int min, final int max) {
-    this.min = min;
-    this.max = max;
-  }
-
-  @Override
-  public Integer min() {
-    return min;
-  }
-
-  @Override
-  public Integer max() {
-    return max;
+    super(min, max);
   }
 
   @Override
   public Integer value(long ordinal) {
-    return (int) (min + ordinal);
+    return (int) (min() + ordinal);
   }
 
   @Override
   public long ordinal(Integer value) {
-    return (long) value - min;
+    return (long) value - min();
   }
 
   @Override
