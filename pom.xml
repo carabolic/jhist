@@ -10,16 +10,15 @@
 
   <!-- PROJECT META DATA -->
   <organization>
-  	<name>DIMA Research Group, TU Berlin</name>
-  	<url>http://www.dima.tu-berlin.de/</url>
+    <name>DIMA Research Group, TU Berlin</name>
+    <url>http://www.dima.tu-berlin.de/</url>
   </organization>
-  <inceptionYear>2013</inceptionYear>
+    <inceptionYear>2013</inceptionYear>
   <developers>
     <developer>
       <id>carabolic</id>
       <name>Christoph Brücke</name>
       <email>christoph.bruecke@campus.tu-berlin.de</email>
-      <url></url>
       <organization>DIMA Research Group, TU Berlin</organization>
       <organizationUrl>http://www.dima.tu-berlin.de/</organizationUrl>
       <roles>
@@ -41,12 +40,13 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -61,9 +61,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>com.google.guava</groupId>
-    	<artifactId>guava</artifactId>
-    	<version>14.0.1</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>14.0.1</version>
     </dependency>
   </dependencies>
 </project>
