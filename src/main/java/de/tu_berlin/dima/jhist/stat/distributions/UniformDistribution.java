@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2013 DIMA Research Group, TU Berlin (http://www.dima.tu-berlin.de)
+ * Copyright 2013 - 2014 DIMA Research Group, TU Berlin (http://www.dima.tu-berlin.de)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,10 @@
  ******************************************************************************/
 package de.tu_berlin.dima.jhist.stat.distributions;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import de.tu_berlin.dima.jhist.stat.Domain;
 import de.tu_berlin.dima.jhist.stat.InvertibleDistribution;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * This class is a representation of the uniform distribution. That is, all
@@ -36,7 +37,7 @@ public class UniformDistribution<T> implements InvertibleDistribution<T> {
 
   /**
    * Creates a new uniform distribution over the domain.
-   * @param domain
+   * @param domain The domain representing the possible values for the distribution.
    */
   public UniformDistribution(final Domain<T> domain) {
     this.domain = domain;
@@ -70,7 +71,7 @@ public class UniformDistribution<T> implements InvertibleDistribution<T> {
     checkArgument(0 < cumulativeProbability && cumulativeProbability <= 1.0);
     long card = domain.cardinality();
     long min = domain.ordinal(domain.min());
-    long ordinal = (long) Math.ceil(cumulativeProbability * card + min - 1);
+    long ordinal = (long) Math.ceil(cumulativeProbability * card) + min - 1;
     return domain.value(ordinal);
   }
 
