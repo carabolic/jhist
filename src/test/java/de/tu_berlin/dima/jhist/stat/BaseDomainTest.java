@@ -96,6 +96,7 @@ public abstract class BaseDomainTest<T> {
 
   @Test
   public void testIterator() {
+    // assume that cardinality is not too big (to decrease test runtime)
     assumeThat(domain.cardinality(), lessThanOrEqualTo(1000000L));
     Iterator<T> domIter = domain.iterator();
     long numElements = 0L;
